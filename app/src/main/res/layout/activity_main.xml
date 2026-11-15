@@ -34,6 +34,7 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:hint="@string/website_hint"
+                android:text="@string/website_hint"
                 android:inputType="textUri"
                 android:minHeight="48dp" />
 
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:hint="@string/location_hint"
+                android:text="@string/location_hint"
                 android:inputType="textPostalAddress"
                 android:minHeight="48dp" />
 
@@ -68,6 +70,7 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:hint="@string/share_hint"
+                android:text="@string/share_hint"
                 android:inputType="textLongMessage|textMultiLine"
                 android:minHeight="48dp" />
 
