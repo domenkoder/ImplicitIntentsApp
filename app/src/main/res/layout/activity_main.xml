@@ -74,8 +74,25 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
                 android:onClick="shareText"
                 android:text="@string/share_this_text" />
+
+            <!-- Phone Call Section -->
+            <EditText
+                android:id="@+id/phone_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autofillHints=""
+                android:hint="@string/phone_hint"
+                android:inputType="phone"
+                android:minHeight="48dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="makeCall"
+                android:text="@string/make_call" />
 
         </LinearLayout>
     </ScrollView>

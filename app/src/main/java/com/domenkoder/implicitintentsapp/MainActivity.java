@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText mWebsiteEditText;
     private EditText mLocationEditText;
+    private EditText mPhoneEditText;
     private EditText mShareEditText;
 
     @Override
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         mWebsiteEditText = findViewById(R.id.website_edittext);
         mLocationEditText = findViewById(R.id.location_edittext);
+        mPhoneEditText = findViewById(R.id.phone_edittext);
         mShareEditText = findViewById(R.id.share_edittext);
     }
 
@@ -51,6 +53,17 @@ public class MainActivity extends AppCompatActivity {
         String locStr = mLocationEditText.getText().toString();
         Uri addressUri = Uri.parse("geo:0,0?q=" + Uri.encode(locStr));
         Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Can't handle this intent!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void makeCall(View view) {
+        String phoneStr = mPhoneEditText.getText().toString();
+        Uri phoneUri = Uri.parse("tel:" + phoneStr);
+        Intent intent = new Intent(Intent.ACTION_DIAL, phoneUri);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
